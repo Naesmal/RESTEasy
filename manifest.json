@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Testeur d'API REST",
+    "version": "1.0",
+    "description": "Testez rapidement des requêtes API REST directement depuis Chrome.",
+    "icons": {
+      "16": "assets/icon16.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    },
+    "action": {
+      "default_popup": "views/popup.html",
+      "default_icon": "assets/icon48.png"
+    },
+    "permissions": ["storage", "scripting", "activeTab"],
+    "background": {
+      "service_worker": "js/background.js"
+    }
+  }
+  
