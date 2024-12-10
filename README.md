@@ -50,7 +50,16 @@ Merci de rapporter tout problème ou suggestion sur le [dépôt GitHub](https://
 
 ## 📄 Licence
 
-Ce projet est sous licence MIT.
+Ce projet est sous licence Apache 2.0.  
+Vous pouvez obtenir une copie de la licence à l'adresse suivante :  
+[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+### **Avis de copyright**
+
+Copyright (c) 2024 Malela Sean Nolwen HONONTA
+
+Ce projet utilise la licence Apache 2.0. Cette licence permet d'utiliser, de modifier et de distribuer ce logiciel à des fins commerciales ou non, sous réserve de la conservation de la présente mention de copyright, de la licence et des mentions spéciales du fichier NOTICE.
+Pour plus de détails, consultez le fichier LICENSE à la racine du projet.
 
 ## 👥 Contribution
 
@@ -58,4 +67,4 @@ Les contributions sont les bienvenues ! Merci de lire le guide de contribution a
 
 ---
 
-**Développé avec ❤️ par [Naesmal]**
+**Développé avec ❤️ par Naesmal**
