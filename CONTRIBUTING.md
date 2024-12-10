@@ -1,16 +1,16 @@
 
 ### 🔥 **Fichier `CONTRIBUTING.md`**
 
-# 🛠️ Guide de Contribution à RESTEasy
+# 🛠️ Guide de Contribution à RESTWave
 
-Merci de l'intérêt que vous portez à RESTEasy ! 🎉  
+Merci de l'intérêt que vous portez à RESTWave ! 🎉  
 Ce guide vous expliquera comment contribuer au projet de manière efficace et respectueuse.
 
 ---
 
 ## 📢 **Comment contribuer ?**
 
-Il existe plusieurs façons de contribuer à RESTEasy :
+Il existe plusieurs façons de contribuer à RESTWave :
 - 📘 **Rapporter un bug** : Vous avez trouvé un bug ? Créez une issue GitHub. 
 - ✨ **Suggérer une amélioration** : Vous avez une idée d'amélioration ? Proposez-la en créant une issue. 
 - 🛠️ **Soumettre une pull request (PR)** : Vous souhaitez corriger un bug ou ajouter une fonctionnalité ? Parfait ! Suivez les étapes ci-dessous.  
@@ -41,13 +41,13 @@ Vous souhaitez proposer une nouvelle fonctionnalité ou une amélioration ?
 
 ## 🛠️ **Soumettre une Pull Request (PR)**
 
-Si vous souhaitez contribuer au code de RESTEasy, voici le processus à suivre :  
+Si vous souhaitez contribuer au code de RESTWave, voici le processus à suivre :  
 
 ### 1️⃣ **Forker le dépôt**
 - Cliquez sur le bouton **Fork** en haut à droite de la page GitHub.  
 - Clonez le fork sur votre machine locale avec :  
   ```bash
-  git clone https://github.com/Naesmal/RESTEasy.git
+  git clone https://github.com/Naesmal/RESTWave.git
   ```
 
 ### 2️⃣ **Créer une nouvelle branche**
@@ -84,7 +84,7 @@ Si vous souhaitez contribuer au code de RESTEasy, voici le processus à suivre :
   ```
 
 ### 7️⃣ **Créer une Pull Request (PR)**
-- Accédez au dépôt d'origine (RESTEasy) sur GitHub.  
+- Accédez au dépôt d'origine (RESTWave) sur GitHub.  
 - Cliquez sur **New Pull Request** et suivez les instructions.  
 - Ajoutez une description claire des modifications apportées.  
 
@@ -114,6 +114,6 @@ Les noms des contributeurs seront crédités dans le fichier `CONTRIBUTORS.md` (
 
 ---
 
-Merci de contribuer à RESTEasy !  
+Merci de contribuer à RESTWave !  
 Si vous avez des questions, n'hésitez pas à **ouvrir une issue**. 😊
 ```

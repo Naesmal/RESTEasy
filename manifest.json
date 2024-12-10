@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "RESTEasy",
+    "name": "RESTWave",
     "version": "1.0",
     "description": "Un petit panneau latéral pour tester rapidement des requêtes API sans Postman",
     "background": {

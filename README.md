@@ -1,8 +1,8 @@
-# 🚀 RESTEasy - Extension Chrome
+# 🚀 RESTWave - Extension Chrome
 
 ## 📝 Description
 
-RESTEasy est une extension Chrome légère et performante qui permet de tester rapidement des requêtes API directement depuis votre navigateur, sans avoir besoin d'ouvrir Postman ou d'autres outils externes.
+RESTWave est une extension Chrome légère et performante qui permet de tester rapidement des requêtes API directement depuis votre navigateur, sans avoir besoin d'ouvrir Postman ou d'autres outils externes.
 
 ## ✨ Fonctionnalités
 
@@ -46,7 +46,7 @@ RESTEasy est une extension Chrome légère et performante qui permet de tester r
 
 ## 🐛 Rapporter un problème
 
-Merci de rapporter tout problème ou suggestion sur le [dépôt GitHub](https://github.com/Naesmal/RESTEasy/issues)
+Merci de rapporter tout problème ou suggestion sur le [dépôt GitHub](https://github.com/Naesmal/RESTWave/issues)
 
 ## 📄 Licence
 

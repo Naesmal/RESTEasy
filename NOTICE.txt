@@ -1,4 +1,4 @@
-RESTEasy - Extension Chrome
+RESTWave - Extension Chrome
 Copyright (c) 2024 Malela Sean Nolwen HONONTA
 
 Cette extension a été développée par Malela Sean Nolwen HONONTA.  
