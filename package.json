@@ -1,0 +1,25 @@
+{
+  "name": "restwave",
+  "version": "1.0.0",
+  "description": "## 📝 Description",
+  "main": "background.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./styles.css -o ./output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Naesmal/RESTEasy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Naesmal/RESTEasy/issues"
+  },
+  "homepage": "https://github.com/Naesmal/RESTEasy#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16"
+  }
+}

@@ -1,50 +1,70 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="light">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RESTWave</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="output.css" rel="stylesheet">
+    <style>
+        body {
+            min-width: 600px;  /* Augmentation de la largeur */
+            min-height: 400px;
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <h2>RESTWave</h2>
-        
-        <div class="method-select">
-            <select id="method">
+<body class="bg-white dark:bg-gray-800 p-4 transition-colors duration-200">
+    <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">RESTWave</h1>
+        <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="space-y-4">
+        <div class="flex gap-4">
+            <select id="method" class="w-24 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:text-white">
                 <option value="GET">GET</option>
                 <option value="POST">POST</option>
                 <option value="PUT">PUT</option>
                 <option value="DELETE">DELETE</option>
                 <option value="PATCH">PATCH</option>
             </select>
+            <input type="text" id="url" placeholder="URL de l'API" class="flex-1 bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:text-white">
         </div>
-        
-        <input type="text" id="url" placeholder="Entrez l'URL de l'API">
-        
-        <div class="headers-section">
-            <h3>En-têtes</h3>
-            <div id="headers-container">
-                <div class="header-input">
-                    <input type="text" class="header-key" placeholder="Clé">
-                    <input type="text" class="header-value" placeholder="Valeur">
-                    <button class="remove-header">-</button>
-                </div>
+
+        <div class="space-y-2">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-white">En-têtes</h2>
+                <button id="add-header" class="inline-flex items-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-200 ease-in-out shadow-sm">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                    Ajouter
+                </button>
             </div>
-            <button id="add-header">Ajouter un en-tête</button>
+            <div id="headers-container" class="space-y-2">
+                <!-- Les en-têtes seront ajoutés ici dynamiquement -->
+            </div>
         </div>
-        
-        <div class="body-section">
-            <h3>Corps de la requête (JSON)</h3>
-            <textarea id="request-body" placeholder="Entrez le corps de la requête au format JSON"></textarea>
+
+        <div class="space-y-2">
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Corps de la requête (JSON)</h2>
+            <textarea id="request-body" rows="4" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:text-white"></textarea>
         </div>
-        
-        <button id="send-request">Envoyer la requête</button>
-        
-        <div class="response-section">
-            <h3>Réponse</h3>
-            <pre id="response-output"></pre>
+
+        <button id="send-request" class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors">
+            Envoyer la requête
+        </button>
+
+        <div class="space-y-2">
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Réponse</h2>
+            <pre id="response-output" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg p-4 overflow-x-auto text-sm dark:text-white"></pre>
         </div>
     </div>
+
+    <script src="theme.js"></script>
     <script src="popup.js"></script>
 </body>
 </html>
