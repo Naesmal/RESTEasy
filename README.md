@@ -46,7 +46,7 @@ RESTEasy est une extension Chrome légère et performante qui permet de tester r
 
 ## 🐛 Rapporter un problème
 
-Merci de rapporter tout problème ou suggestion sur le [dépôt GitHub](https://github.votre-projet/issues)
+Merci de rapporter tout problème ou suggestion sur le [dépôt GitHub](https://github.com/Naesmal/RESTEasy/issues)
 
 ## 📄 Licence
 
