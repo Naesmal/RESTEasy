@@ -1,0 +1,8 @@
+RESTWave - Extension Chrome
+Copyright (c) 2024 Malela Sean Nolwen HONONTA
+
+Cette extension a été développée par Malela Sean Nolwen HONONTA.  
+Ce projet utilise la licence Apache 2.0.  
+Pour plus d'informations, consultez le fichier `LICENSE`.
+
+Les utilisateurs doivent inclure cette mention d'attribution lorsqu'ils redistribuent ou modifient ce projet.
