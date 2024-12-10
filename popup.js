@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Éléments de l'interface
     const methodSelect = document.getElementById('method');
     const urlInput = document.getElementById('url');
     const addHeaderButton = document.getElementById('add-header');
@@ -8,6 +7,56 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendRequestButton = document.getElementById('send-request');
     const responseOutput = document.getElementById('response-output');
 
+    function addHeaderRow(key = '', value = '') {
+        const headerInput = document.createElement('div');
+        headerInput.className = 'header-input mb-2 flex items-center gap-3 bg-white dark:bg-gray-700 p-3 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600';
+        headerInput.innerHTML = `
+            <div class="flex-1">
+                <input type="text" 
+                    class="header-key w-full px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-md text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                    placeholder="Clé" 
+                    value="${key}">
+            </div>
+            <div class="flex-1">
+                <input type="text" 
+                    class="header-value w-full px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-md text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                    placeholder="Valeur" 
+                    value="${value}">
+            </div>
+            <button class="remove-header flex items-center justify-center w-8 h-8 rounded-full hover:bg-red-100 dark:hover:bg-red-900 text-red-500 hover:text-red-700 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        `;
+        
+        headerInput.querySelector('.remove-header').addEventListener('click', function() {
+            headerInput.classList.add('fade-out');
+            setTimeout(() => {
+                headerInput.remove();
+                saveCurrentState();
+            }, 200);
+        });
+        
+        headerInput.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', saveCurrentState);
+        });
+        
+        // Animation d'entrée
+        headerInput.style.opacity = '0';
+        headerInput.style.transform = 'translateY(-10px)';
+        headersContainer.appendChild(headerInput);
+        
+        // Forcer le reflow
+        headerInput.offsetHeight;
+        
+        // Appliquer la transition
+        headerInput.style.transition = 'all 0.2s ease-out';
+        headerInput.style.opacity = '1';
+        headerInput.style.transform = 'translateY(0)';
+        
+        return headerInput;
+    }
     // Gestion de la persistance des données
     function saveCurrentState() {
         chrome.storage.local.set({
@@ -45,30 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Fonction pour ajouter une ligne d'en-tête
-    function addHeaderRow(key = '', value = '') {
-        const headerInput = document.createElement('div');
-        headerInput.classList.add('header-input');
-        headerInput.innerHTML = `
-            <input type="text" class="header-key" placeholder="Clé" value="${key}">
-            <input type="text" class="header-value" placeholder="Valeur" value="${value}">
-            <button class="remove-header">-</button>
-        `;
-        
-        // Gestion de la suppression d'en-tête
-        headerInput.querySelector('.remove-header').addEventListener('click', function() {
-            headerInput.remove();
-            saveCurrentState();
-        });
-        
-        // Ajout des écouteurs d'événements pour sauvegarder l'état
-        headerInput.querySelectorAll('input').forEach(input => {
-            input.addEventListener('input', saveCurrentState);
-        });
-        
-        headersContainer.appendChild(headerInput);
-        return headerInput;
-    }
 
     // Événement pour ajouter un nouvel en-tête
     addHeaderButton.addEventListener('click', () => {
@@ -114,7 +139,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Préparation des options de la requête
         const requestOptions = {
             method: method,
-            headers: headers
+            headers: headers,
+            mode: 'cors' 
         };
 
         // Gestion du corps de la requête pour POST, PUT, PATCH
@@ -179,6 +205,29 @@ document.addEventListener('DOMContentLoaded', function() {
             responseOutput.textContent = `Erreur de requête : ${error.message}`;
         }
     });
+
+        // Ajouter du CSS pour l'animation
+        const style = document.createElement('style');
+        style.textContent = `
+            .header-input {
+                transition: all 0.2s ease-out;
+            }
+            .fade-out {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            .header-input:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            }
+            .remove-header:focus {
+                outline: none;
+                ring: 2px;
+                ring-offset: 2px;
+                ring-red-500;
+            }
+        `;
+        document.head.appendChild(style);
 
     // Ajouter une première ligne d'en-tête par défaut
     addHeaderRow('Accept', 'application/json');
